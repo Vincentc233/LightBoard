@@ -8,7 +8,7 @@ public LightBoard(int numRows, int numCols)
     lights = new boolean[numRows][numCols];
     for(int i =0; i< lights.length; i++){
         for(int n=0; n<lights[0].length; n++){
-            if((int) (Math.random() * 100) -1 <= 40){
+            if((int) (Math.random() * 100) + 1 <= 40){
                 lights[i][n] = true;
             }
         }
