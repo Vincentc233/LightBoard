@@ -18,15 +18,11 @@ public LightBoard(int numRows, int numCols)
 public boolean evaluateLight(int row, int col)
 { 
     int countLights =0;
-    int countEven = 0;
-    int countThree =0; 
     for(int i =0; i< lights.length; i++){
         if(lights[i][col]) countLights++;
-        if(lights[i][col] && i%2==0) countEven++;
-        if(lights[i][col] && i%3==0) countThree++;
     } 
-    if(lights[row][col] && countLights == countEven) return false;
-    else if(lights[row][col] && countLights == countThree) return true;
+    if(lights[row][col] && countLights % 2==0) return false;
+    else if(!lights[row][col] && countLights%3==0) return true;
     else return lights[row][col];
 }
 
